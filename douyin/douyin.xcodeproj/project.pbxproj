@@ -8,10 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		58440E9B236482A800938096 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58440E9A236482A800938096 /* AppDelegate.swift */; };
-		58440E9D236482A800938096 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58440E9C236482A800938096 /* ViewController.swift */; };
-		58440EA0236482A800938096 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58440E9E236482A800938096 /* Main.storyboard */; };
 		58440EA2236482A900938096 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58440EA1236482A900938096 /* Assets.xcassets */; };
 		58440EA5236482A900938096 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58440EA3236482A900938096 /* LaunchScreen.storyboard */; };
+		58440EB1236488E900938096 /* DYMeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58440EB0236488E900938096 /* DYMeController.swift */; };
 		EC38BEE3BA49C544BC6698C3 /* Pods_douyin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B42FCE5AB05B54E0C303B22 /* Pods_douyin.framework */; };
 /* End PBXBuildFile section */
 
@@ -19,11 +18,10 @@
 		3B42FCE5AB05B54E0C303B22 /* Pods_douyin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_douyin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		58440E97236482A800938096 /* douyin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = douyin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58440E9A236482A800938096 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		58440E9C236482A800938096 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		58440E9F236482A800938096 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		58440EA1236482A900938096 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58440EA4236482A900938096 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		58440EA6236482A900938096 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58440EB0236488E900938096 /* DYMeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DYMeController.swift; sourceTree = "<group>"; };
 		A150A31B1F7EF0FB7B0E0F52 /* Pods-douyin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-douyin.release.xcconfig"; path = "Target Support Files/Pods-douyin/Pods-douyin.release.xcconfig"; sourceTree = "<group>"; };
 		E7F4C70285F86ACA385A2CAE /* Pods-douyin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-douyin.debug.xcconfig"; path = "Target Support Files/Pods-douyin/Pods-douyin.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -46,7 +44,6 @@
 				E7F4C70285F86ACA385A2CAE /* Pods-douyin.debug.xcconfig */,
 				A150A31B1F7EF0FB7B0E0F52 /* Pods-douyin.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -71,14 +68,45 @@
 		58440E99236482A800938096 /* douyin */ = {
 			isa = PBXGroup;
 			children = (
+				58440EAC236488A700938096 /* Classes */,
 				58440E9A236482A800938096 /* AppDelegate.swift */,
-				58440E9C236482A800938096 /* ViewController.swift */,
-				58440E9E236482A800938096 /* Main.storyboard */,
 				58440EA1236482A900938096 /* Assets.xcassets */,
 				58440EA3236482A900938096 /* LaunchScreen.storyboard */,
 				58440EA6236482A900938096 /* Info.plist */,
 			);
 			path = douyin;
+			sourceTree = "<group>";
+		};
+		58440EAC236488A700938096 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				58440EAD236488A700938096 /* Controller */,
+				58440EAE236488A700938096 /* Model */,
+				58440EAF236488A700938096 /* View */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		58440EAD236488A700938096 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				58440EB0236488E900938096 /* DYMeController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		58440EAE236488A700938096 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		58440EAF236488A700938096 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		9EC1FD8087B9D8479DB86FCE /* Frameworks */ = {
@@ -117,6 +145,7 @@
 		58440E8F236482A800938096 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = DY;
 				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = xiongbk;
@@ -151,7 +180,6 @@
 			files = (
 				58440EA5236482A900938096 /* LaunchScreen.storyboard in Resources */,
 				58440EA2236482A900938096 /* Assets.xcassets in Resources */,
-				58440EA0236482A800938096 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,7 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58440E9D236482A800938096 /* ViewController.swift in Sources */,
+				58440EB1236488E900938096 /* DYMeController.swift in Sources */,
 				58440E9B236482A800938096 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,14 +247,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		58440E9E236482A800938096 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				58440E9F236482A800938096 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		58440EA3236482A900938096 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -362,6 +382,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KNBA4MPFNF;
 				INFOPLIST_FILE = douyin/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -381,6 +402,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KNBA4MPFNF;
 				INFOPLIST_FILE = douyin/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
