@@ -1,0 +1,6 @@
+framework module Pods_douyin {
+  umbrella header "Pods-douyin-umbrella.h"
+
+  export *
+  module * { export * }
+}
