@@ -15,10 +15,20 @@ class DYMeController: UIViewController,UICollectionViewDataSource,UICollectionVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        // 设置导航栏
         setNav()
+        
+        // 添加collectionview
         self.view.addSubview(collectionview)
+        
+        // 注册cell
         collectionview.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        // 注册头视图
+        collectionview.register(UICollectionReusableView.self, forSupplementaryViewOfKind:UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header")
+        
+        //注册尾视图
+        collectionview.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "footer")
+        
         collectionview.snp.makeConstraints { (make) in
             
             make.edges.equalTo(view)
@@ -29,7 +39,7 @@ class DYMeController: UIViewController,UICollectionViewDataSource,UICollectionVi
     
     func setNav() {
         
-        // 导航了的颜色设置
+        // 导航的颜色设置
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
     }
@@ -55,6 +65,7 @@ class DYMeController: UIViewController,UICollectionViewDataSource,UICollectionVi
 
 extension DYMeController{
     
+    // MARK: - UICollectionViewDataSource
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         
@@ -66,7 +77,7 @@ extension DYMeController{
         if section == 0 {
             return 0
         }else{
-            return 40
+            return 15
         }
     }
     
@@ -79,15 +90,56 @@ extension DYMeController{
         
     }
     
+    // 设置头尾视图的内容
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        if indexPath.section == 0{
+            
+            if kind == UICollectionView.elementKindSectionHeader{
+                
+                let header = collectionview.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header", for: indexPath)
+                header.backgroundColor = UIColor.gray
+                return header
+                
+            }else{
+                
+               let footer = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "footer", for: indexPath)
+                footer.backgroundColor = UIColor.yellow
+                return footer
+            }
+            
+          
+        }
+        return UICollectionReusableView.init()
+    }
+    
+    
+    
+    // MARK: - UICollectionViewDelegateFlowLayout
+    
+    // 分组中头部视图的大小
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         
-        if section == 0 {
+        if section == 0 { // 第1组高度为200
+            
             return CGSize(width: UIScreen.main.bounds.size.width, height: 200)
+            
         }else{
             return CGSize.zero
         }
     }
     
+    // 分组中尾视图的大小
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        
+        if section == 0 {
+            
+            return CGSize(width: UIScreen.main.bounds.size.width, height: 70)
+            
+        }else{
+            return CGSize.zero
+        }
+    }
     
 }
 
